@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -73,9 +75,8 @@
             this.labelNameValue.AutoSize = true;
             this.labelNameValue.Location = new System.Drawing.Point(99, 53);
             this.labelNameValue.Name = "labelNameValue";
-            this.labelNameValue.Size = new System.Drawing.Size(35, 15);
+            this.labelNameValue.Size = new System.Drawing.Size(0, 15);
             this.labelNameValue.TabIndex = 4;
-            this.labelNameValue.Text = "value";
             // 
             // label2
             // 
@@ -91,9 +92,8 @@
             this.labelTrackValue.AutoSize = true;
             this.labelTrackValue.Location = new System.Drawing.Point(99, 68);
             this.labelTrackValue.Name = "labelTrackValue";
-            this.labelTrackValue.Size = new System.Drawing.Size(35, 15);
+            this.labelTrackValue.Size = new System.Drawing.Size(0, 15);
             this.labelTrackValue.TabIndex = 4;
-            this.labelTrackValue.Text = "value";
             // 
             // dataGridView1
             // 
@@ -101,45 +101,73 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnPlay,
             this.ColumnDuration,
             this.ColumnSize,
             this.ColumnUrl});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(12, 86);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(596, 249);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // ColumnPlay
             // 
-            this.ColumnPlay.HeaderText = "Play";
+            this.ColumnPlay.FillWeight = 13.83955F;
+            this.ColumnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ColumnPlay.HeaderText = "";
             this.ColumnPlay.Name = "ColumnPlay";
+            this.ColumnPlay.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // ColumnDuration
             // 
-            this.ColumnDuration.HeaderText = "Duration";
+            this.ColumnDuration.FillWeight = 7.751403F;
+            this.ColumnDuration.HeaderText = "Длит.";
             this.ColumnDuration.Name = "ColumnDuration";
+            this.ColumnDuration.Width = 50;
             // 
             // ColumnSize
             // 
-            this.ColumnSize.HeaderText = "Size";
+            this.ColumnSize.FillWeight = 8.865897F;
+            this.ColumnSize.HeaderText = "Размер";
             this.ColumnSize.Name = "ColumnSize";
+            this.ColumnSize.Width = 50;
             // 
             // ColumnUrl
             // 
+            this.ColumnUrl.FillWeight = 369.5431F;
             this.ColumnUrl.HeaderText = "Url";
             this.ColumnUrl.Name = "ColumnUrl";
+            this.ColumnUrl.Width = 393;
             // 
             // FormSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(620, 347);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.labelTrackValue);

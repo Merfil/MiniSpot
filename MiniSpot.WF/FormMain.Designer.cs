@@ -61,6 +61,7 @@
             // 
             // buttonPlay
             // 
+            this.buttonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPlay.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonPlay.Location = new System.Drawing.Point(385, 13);
             this.buttonPlay.Name = "buttonPlay";
@@ -91,35 +92,37 @@
             // 
             this.trackBarVolume.AutoSize = false;
             this.trackBarVolume.Location = new System.Drawing.Point(683, 16);
+            this.trackBarVolume.Maximum = 100;
             this.trackBarVolume.Name = "trackBarVolume";
             this.trackBarVolume.Size = new System.Drawing.Size(104, 25);
             this.trackBarVolume.TabIndex = 4;
             this.trackBarVolume.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarVolume.Scroll += new System.EventHandler(this.trackBarVolume_Scroll);
             // 
             // trackBarPlayback
             // 
             this.trackBarPlayback.AutoSize = false;
-            this.trackBarPlayback.Location = new System.Drawing.Point(208, 49);
+            this.trackBarPlayback.Location = new System.Drawing.Point(250, 49);
             this.trackBarPlayback.Name = "trackBarPlayback";
-            this.trackBarPlayback.Size = new System.Drawing.Size(438, 29);
+            this.trackBarPlayback.Size = new System.Drawing.Size(300, 29);
             this.trackBarPlayback.TabIndex = 3;
             this.trackBarPlayback.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarPlayback.Scroll += new System.EventHandler(this.trackBarPlayback_Scroll);
             // 
             // labelNameSong
             // 
-            this.labelNameSong.AutoSize = true;
             this.labelNameSong.Location = new System.Drawing.Point(76, 28);
             this.labelNameSong.Name = "labelNameSong";
-            this.labelNameSong.Size = new System.Drawing.Size(39, 15);
+            this.labelNameSong.Size = new System.Drawing.Size(168, 15);
             this.labelNameSong.TabIndex = 2;
             this.labelNameSong.Text = "Name";
             // 
             // labelArtist
             // 
-            this.labelArtist.AutoSize = true;
+            this.labelArtist.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelArtist.Location = new System.Drawing.Point(76, 43);
             this.labelArtist.Name = "labelArtist";
-            this.labelArtist.Size = new System.Drawing.Size(35, 15);
+            this.labelArtist.Size = new System.Drawing.Size(168, 15);
             this.labelArtist.TabIndex = 2;
             this.labelArtist.Text = "Artist";
             // 
@@ -134,6 +137,7 @@
             // 
             // buttonNextTrack
             // 
+            this.buttonNextTrack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNextTrack.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonNextTrack.Location = new System.Drawing.Point(421, 17);
             this.buttonNextTrack.Name = "buttonNextTrack";
@@ -144,6 +148,7 @@
             // 
             // buttonPreviousTrack
             // 
+            this.buttonPreviousTrack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPreviousTrack.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonPreviousTrack.Location = new System.Drawing.Point(354, 16);
             this.buttonPreviousTrack.Name = "buttonPreviousTrack";
@@ -151,6 +156,7 @@
             this.buttonPreviousTrack.TabIndex = 0;
             this.buttonPreviousTrack.Text = "I<";
             this.buttonPreviousTrack.UseVisualStyleBackColor = true;
+            this.buttonPreviousTrack.Click += new System.EventHandler(this.buttonPreviousTrack_Click);
             // 
             // TitleBar
             // 
@@ -166,6 +172,7 @@
             // buttonOptions
             // 
             this.buttonOptions.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonOptions.Enabled = false;
             this.buttonOptions.FlatAppearance.BorderSize = 0;
             this.buttonOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOptions.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -207,8 +214,8 @@
             // 
             // panelPlayLists
             // 
-            this.panelPlayLists.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panelPlayLists.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelPlayLists.Controls.Add(this.buttonPlayList2);
             this.panelPlayLists.Controls.Add(this.buttonPlayList1);
@@ -220,6 +227,7 @@
             // buttonPlayList2
             // 
             this.buttonPlayList2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonPlayList2.Enabled = false;
             this.buttonPlayList2.FlatAppearance.BorderSize = 0;
             this.buttonPlayList2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPlayList2.Location = new System.Drawing.Point(0, 30);
@@ -233,6 +241,7 @@
             // buttonPlayList1
             // 
             this.buttonPlayList1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonPlayList1.Enabled = false;
             this.buttonPlayList1.FlatAppearance.BorderSize = 0;
             this.buttonPlayList1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPlayList1.Location = new System.Drawing.Point(0, 0);
@@ -254,6 +263,7 @@
             // buttonAddPlayList
             // 
             this.buttonAddPlayList.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonAddPlayList.Enabled = false;
             this.buttonAddPlayList.FlatAppearance.BorderSize = 0;
             this.buttonAddPlayList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddPlayList.Location = new System.Drawing.Point(0, 120);
@@ -276,6 +286,7 @@
             this.buttonUser.Text = "Медиатека";
             this.buttonUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonUser.UseVisualStyleBackColor = true;
+            this.buttonUser.Click += new System.EventHandler(this.buttonUser_Click);
             // 
             // buttonSearch
             // 
@@ -294,6 +305,7 @@
             // buttonHome
             // 
             this.buttonHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonHome.Enabled = false;
             this.buttonHome.FlatAppearance.BorderSize = 0;
             this.buttonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHome.Location = new System.Drawing.Point(0, 0);
@@ -316,6 +328,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelMenu);
@@ -326,7 +339,6 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelPlayer.ResumeLayout(false);
-            this.panelPlayer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPlayback)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
